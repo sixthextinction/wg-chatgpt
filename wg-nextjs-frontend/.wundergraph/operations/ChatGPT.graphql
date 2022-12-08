@@ -1,0 +1,5 @@
+query {
+    chatgpt_getApi {
+        data
+    }
+}

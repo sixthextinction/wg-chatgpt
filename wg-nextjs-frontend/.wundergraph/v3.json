@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "express-api-template",
+    "version": "1.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3)."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001"
+    }
+  ],
+
+  "paths": {
+    "/api": {
+      "get": {
+        "summary": "/api",
+        "responses": {
+          "200": {
+            "description": "A response from ChatGPT",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Chat"
+                }
+              }
+            }
+          }
+        },
+        "tags": []
+      }
+    }
+  },
+  "tags": [],
+  "components": {
+    "schemas": {
+      "Chat": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
