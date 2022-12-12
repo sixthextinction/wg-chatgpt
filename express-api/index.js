@@ -3,18 +3,26 @@ import express from "express";
 import expressOasGenerator from "express-oas-generator";
 const app = express();
 
-expressOasGenerator.init(app, {}); // to overwrite generated specification's values use second argument.
+// expressOasGenerator.init(app, {}); // to overwrite generated specification's values use second argument.
 const port = 3001;
 
 import * as dotenv from "dotenv";
 dotenv.config();
 import { ChatGPTAPI } from "chatgpt";
+import fetch from "node-fetch";
 
 async function example() {
   // sessionToken is required; see below for details
+  // old
+  // const api = new ChatGPTAPI({
+  //   sessionToken: process.env.SESSION_TOKEN,
+  // });
+  // new
   const api = new ChatGPTAPI({
     sessionToken: process.env.SESSION_TOKEN,
-  });
+    clearanceToken: process.env.CLEARANCE_TOKEN,
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0' // needs to match your browser's user agent
+  })
   // ensure the API is properly authenticated
   await api.ensureAuth();
 
@@ -38,3 +46,4 @@ app.get("/api", async (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
