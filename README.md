@@ -5,9 +5,10 @@ NextJS frontend + Express API (w/ OpenAPI spec) that calls ChatGPT via the npm `
 
 ## Instructions
 0. ```npm install``` in both the backend and frontend dirs (Needs node.js >=18 )
-1. Needs to extract browser credentials via puppeteer
+1. Needs your OpenAI credentials -- email and password -- in an .env file. 
+1B. If you run into CAPTCHA/HTTP 403 errors, it an also automatically bypass those with your browser (via puppeteer) if you use ChatGPTAPIBrowser instead:
 
-Your OpenAI email and password need to be in an .env file. Here's the ```chatgpt``` example (as of Dec 15, 2022)
+(as of Dec 15, 2022)
 ```javascript
 import { ChatGPTAPIBrowser } from 'chatgpt'
 
