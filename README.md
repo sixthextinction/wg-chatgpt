@@ -4,7 +4,7 @@
 NextJS frontend + Express API (w/ OpenAPI spec) that calls ChatGPT via the npm ```chatgpt``` module, and uses WunderGraph as a BFF for orchestrating downstream calls (safe assumption that in a real world app, ChatGPT won't be your only call).
 
 ## Instructions
-0. ```npm install``` in both the backend and frontend dirs
+0. ```npm install``` in both the backend and frontend dirs (Needs node.js >=18 )
 1. Needs to extract browser credentials via puppeteer
 
 Your OpenAI email and password need to be in an .env file. Here's the ```chatgpt``` example (as of Dec 15, 2022)
