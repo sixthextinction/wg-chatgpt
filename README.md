@@ -6,6 +6,7 @@ NextJS frontend + Express API (w/ OpenAPI spec) that calls ChatGPT via the npm `
 ## Instructions
 0. ```npm install``` in both the backend and frontend dirs (Needs node.js >=18 )
 1. Needs your OpenAI credentials -- ```__Secure-next-auth.session-token``` and ```cf_clearance``` --- in an .env file. 
+
 1B. It can also automatically get those via your browser (```npm i puppeteer``` if you do this) if you use ChatGPTAPIBrowser instead:
 
 (as of Dec 15, 2022)
