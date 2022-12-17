@@ -6,8 +6,7 @@ NextJS frontend + Express API (w/ OpenAPI spec) that calls ChatGPT via the npm `
 ## Instructions
 0. ```npm install``` in both the backend and frontend dirs (Needs node.js >=18 )
 1. Needs your OpenAI credentials -- ```__Secure-next-auth.session-token``` and ```cf_clearance``` --- in an .env file. 
-
-1B. It can also automatically get those via your browser (```npm i puppeteer``` if you do this) if you use ChatGPTAPIBrowser instead:
+2. It can also automatically get those via your browser (```npm i puppeteer``` if you do this) if you use ChatGPTAPIBrowser instead:
 
 (as of Dec 15, 2022)
 ```javascript
@@ -23,6 +22,6 @@ const result = await api.sendMessage('Hello World!')
 console.log(result.response)
 ```
 
-2. Start the Express API first (port 3001) then the NextJS app/WG server (port 3000 for Next, and 9991 for GraphQL) 
-3. The frontend UI is pretty self explanatory, but expect responses to take awhile. 
-4. HTTP 403 FORBIDDEN / "ChatGPT is at capacity" errors are common. These are on ChatGPT/OpenAI's end :\
+3. Start the Express API first (port 3001) then the NextJS app/WG server (port 3000 for Next, and 9991 for GraphQL) 
+4. The frontend UI is pretty self explanatory, but expect responses to take awhile. 
+5. HTTP 403 FORBIDDEN / "ChatGPT is at capacity" errors are common. These are on ChatGPT/OpenAI's end :\
