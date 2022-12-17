@@ -1,5 +1,6 @@
 query {
-    chatgpt_getApi {
-        data
+    response: chatgpt_getApi {
+        question
+        answer
     }
 }

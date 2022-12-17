@@ -10,7 +10,13 @@ import {
 	SubscriptionEventHandler,
 	FetchUserRequestOptions,
 } from "@wundergraph/sdk/client";
-import type { ChatGPTResponse, ChatGPTResponseData } from "./models";
+import type {
+	ChatGPTResponse,
+	ChatGPTResponseData,
+	GetAnswerResponse,
+	GetAnswerInput,
+	GetAnswerResponseData,
+} from "./models";
 
 export type UserRole = "admin" | "user";
 
@@ -29,13 +35,16 @@ export interface AuthProvider {
 }
 
 export const defaultClientConfig: ClientConfig = {
-	applicationHash: "3a17729a",
+	applicationHash: "12ca4ec8",
 	baseURL: "http://localhost:9991",
 	sdkVersion: "0.124.1",
 };
 
 export const operationMetadata: OperationMetadata = {
 	ChatGPT: {
+		requiresAuthentication: false,
+	},
+	GetAnswer: {
 		requiresAuthentication: false,
 	},
 };
@@ -97,7 +106,13 @@ export type Queries = {
 	};
 };
 
-export type Mutations = {};
+export type Mutations = {
+	GetAnswer: {
+		input: GetAnswerInput;
+		data: GetAnswerResponseData;
+		requiresAuthentication: false;
+	};
+};
 
 export type Subscriptions = {};
 

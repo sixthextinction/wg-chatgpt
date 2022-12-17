@@ -1,0 +1,6 @@
+mutation ($question: String!) {
+  chatgpt_postApi(postApiInput: { question: $question }) {
+    question
+    answer
+  }
+}

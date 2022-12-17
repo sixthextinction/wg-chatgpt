@@ -13,18 +13,74 @@
       "url": "http://localhost:3001"
     }
   ],
-
   "paths": {
     "/api": {
       "get": {
         "summary": "/api",
         "responses": {
           "200": {
-            "description": "A response from ChatGPT",
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Chat"
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "The question to be asked",
+                      "example": "What is the answer to life, the universe, and everything?"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "The answer",
+                      "example": "42!"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": []
+      },
+      "post": {
+        "summary": "/api",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "question": {
+                    "type": "string",
+                    "description": "The question to be asked",
+                    "example": "What is the answer to life, the universe, and everything?"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "The question to be asked",
+                      "example": "What is the answer to life, the universe, and everything?"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "The answer",
+                      "example": "42!"
+                    }
+                  }
                 }
               }
             }
@@ -34,17 +90,5 @@
       }
     }
   },
-  "tags": [],
-  "components": {
-    "schemas": {
-      "Chat": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "string"
-          }
-        }
-      }
-    }
-  }
+  "tags": []
 }
