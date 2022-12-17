@@ -22,7 +22,8 @@ async function getAnswer(question) {
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0", // needs to match your browser's user agent
   });
   // ensure the API is properly authenticated
-  await api.ensureAuth();
+  //await api.ensureAuth();
+  await api.initSession()
 
   // send a message and wait for the response
   const response = await api.sendMessage(question);
